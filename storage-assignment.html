@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage Assignments</title>
+    </head>
+  <body onload="values()">
+    <div class="localStorage">
+        <h1>Local Storage</h1>
+        <h1 id="local"></h1>
+        <button onclick="incrementValue()">Increment</button>
+        <button onclick="decrementValue()">Decrement</button>
+    </div>
+    <div class="sessionStorage">
+        <h1>Session Storage</h1>
+        <h1 id="session"></h1>
+        <button onclick="increment()">Increment</button>
+        <button onclick="decrement()">Decrement</button>
+    </div>
+
+
+    <script>
+        function incrementValue(){
+            var storage = localStorage.getItem('localCount')??0;
+            localStorage.setItem('localCount', parseInt(storage)+1);
+            document.getElementById('local').innerHTML = localStorage.getItem('localCount').toString();
+        }
+
+        function decrementValue(){
+            var storage = localStorage.getItem('localCount')??0;
+            localStorage.setItem('localCount', parseInt(storage)-1);
+            document.getElementById('local').innerHTML = localStorage.getItem('localCount').toString();
+        }
+
+        function increment(){
+            var storage = sessionStorage.getItem('sessionCount')??0;
+            sessionStorage.setItem('sessionCount', parseInt(storage)+1);
+            document.getElementById('session').innerHTML = sessionStorage.getItem('sessionCount').toString();
+        }
+
+        function decrement(){
+            var storage = sessionStorage.getItem('sessionCount')??0;
+            sessionStorage.setItem('sessionCount', parseInt(storage)-1);
+            document.getElementById('session').innerHTML = sessionStorage.getItem('sessionCount').toString();
+        }
+
+        function values() {
+            document.getElementById('local').innerHTML = localStorage.getItem('localCount')??0;
+            document.getElementById('session').innerHTML = localStorage.getItem('sessionCount')??0;
+        }
+    </script>
+</body>
+</html>

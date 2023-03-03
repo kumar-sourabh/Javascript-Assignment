@@ -1,0 +1,17 @@
+[
+    {
+        "tableName":"Table-1",
+        "foodItems":[],
+        "totalPrice":"0"
+    },
+    {
+        "tableName":"Table-2",
+        "foodItems":[],
+        "totalPrice":"0"
+    },
+    {
+        "tableName":"Table-3",
+        "foodItems":[],
+        "totalPrice":"0"
+    }
+]
